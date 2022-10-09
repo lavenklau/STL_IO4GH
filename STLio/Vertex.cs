@@ -63,7 +63,7 @@ namespace QuantumConcepts.Formats.StereoLithography
         public static Vertex Read(StreamReader reader)
         {
             const string regex = @"\s*(facet normal|vertex)\s+(?<X>[^\s]+)\s+(?<Y>[^\s]+)\s+(?<Z>[^\s]+)";
-            string? data;
+            string data;
             Match match;
 
             if (reader == null) throw new ArgumentNullException(nameof(reader));
@@ -138,14 +138,14 @@ namespace QuantumConcepts.Formats.StereoLithography
         }
 
         /// <see cref="Equals(Vertex)"/>
-        public override bool Equals(object? other)
+        public override bool Equals(object other)
         {
             return Equals(other as Vertex);
         }
 
         /// <summary>Determines whether or not this instance is the same as the <paramref name="other"/> instance.</summary>
         /// <param name="other">The <see cref="Vertex"/> to which to compare.</param>
-        public bool Equals(Vertex? other)
+        public bool Equals(Vertex other)
         {
             return
                 other != null &&

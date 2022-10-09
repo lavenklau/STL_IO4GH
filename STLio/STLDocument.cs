@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,7 +16,7 @@ namespace QuantumConcepts.Formats.StereoLithography
 
         /// <summary>The name of the solid.</summary>
         /// <remarks>This property is not used for binary STLs.</remarks>
-        public string? Name { get; set; } = null;
+        public string Name { get; set; } = null;
 
         /// <summary>The list of <see cref="Facet"/>s within this solid.</summary>
         public IList<Facet> Facets { get; set; } = new List<Facet>();
@@ -167,9 +168,9 @@ namespace QuantumConcepts.Formats.StereoLithography
 
             // Determine if the stream contains a text-based or binary-based <see cref="STLDocument"/>, and then read it.
             var isText = IsText(stream);
-            STLDocument? textDoc = null;
-            STLDocument? binaryDoc = null;
-            STLDocument? finalDoc = null;
+            STLDocument textDoc = null;
+            STLDocument binaryDoc = null;
+            STLDocument finalDoc = null;
 
             if (isText)
             {
@@ -214,7 +215,7 @@ namespace QuantumConcepts.Formats.StereoLithography
             if (reader == null) throw new NullReferenceException(nameof(reader));
 
             const string regexSolid = @"solid\s+(?<Name>[^\r\n]+)?";
-            string? header = reader.ReadLine();
+            string header = reader.ReadLine();
             Match headerMatch;
             STLDocument stl;
 
@@ -333,7 +334,7 @@ namespace QuantumConcepts.Formats.StereoLithography
         }
 
         /// <see cref="Equals(STLDocument)"/>
-        public override bool Equals(object? other)
+        public override bool Equals(object other)
         {
             return Equals(other as STLDocument);
         }
@@ -341,7 +342,7 @@ namespace QuantumConcepts.Formats.StereoLithography
         /// <summary>Determines whether or not this instance is the same as the <paramref name="other"/> instance.</summary>
         /// <param name="other">The <see cref="STLDocument"/> to which to compare.</param>
         /// <returns>True if this instance is equal to the <paramref name="other"/> instance.</returns>
-        public bool Equals(STLDocument? other)
+        public bool Equals(STLDocument other)
         {
             return
                 other != null &&

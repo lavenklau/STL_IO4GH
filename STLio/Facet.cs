@@ -10,7 +10,7 @@ namespace QuantumConcepts.Formats.StereoLithography
     public class Facet : IEquatable<Facet>, IEnumerable<Vertex>
     {
         /// <summary>Indicates the directionality of the <see cref="Facet"/>.</summary>
-        public Normal? Normal { get; set; } = null;
+        public Normal Normal { get; set; } = null;
 
         /// <summary>Indicates the location of the <see cref="Facet"/>.</summary>
         public IList<Vertex> Vertices { get; set; } = new List<Vertex>();
@@ -127,14 +127,14 @@ namespace QuantumConcepts.Formats.StereoLithography
         }
 
         /// <see cref="Equals(Facet)"/>
-        public override bool Equals(object? other)
+        public override bool Equals(object other)
         {
             return Equals(other as Facet);
         }
 
         /// <summary>Determines whether or not this instance is the same as the <paramref name="other"/> instance.</summary>
         /// <param name="other">The <see cref="Facet"/> to which to compare.</param>
-        public bool Equals(Facet? other)
+        public bool Equals(Facet other)
         {
             return
                 other != null &&
