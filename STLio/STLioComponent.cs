@@ -21,9 +21,9 @@ namespace STLio
         /// new tabs/panels will automatically be created.
         /// </summary>
         public STLioComponent()
-          : base("STLio", "Nickname",
-              "Description",
-              "Category", "Subcategory")
+          : base("STLio", "stl",
+              "Read or Write STL file",
+              "User", "STL")
         {
         }
 
@@ -32,6 +32,8 @@ namespace STLio
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
+            pManager.AddTextParameter("fileName", "fn", "path to a stl file", GH_ParamAccess.item);
+            pManager.AddNumberParameter("weldAngle", "A", "angle to weld", GH_ParamAccess.item, 22.5);
         }
 
         /// <summary>
@@ -39,6 +41,7 @@ namespace STLio
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
+            pManager.AddMeshParameter("mesh", "m", "readed stl mesh", GH_ParamAccess.item);
         }
 
         /// <summary>
@@ -48,6 +51,17 @@ namespace STLio
         /// to store data in output parameters.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
+            String fileName = "";
+            double weldAngle = 22.5;
+            bool suc1 = DA.GetData("fileName", ref fileName);
+            bool suc2 = DA.GetData("weldAngle", ref weldAngle);
+            if (suc1 && suc2)
+            {
+                
+            }
+            else {
+                AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Read mesh failed");
+            }
         }
 
         /// <summary>
@@ -61,6 +75,8 @@ namespace STLio
                 // You can add image files to your project resources and access them like this:
                 //return Resources.IconForThisComponent;
                 return null;
+                //return Resources.stlIcon1.ico;
+                //return Resources.
             }
         }
 
