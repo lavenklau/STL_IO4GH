@@ -1,0 +1,13 @@
+## STL_IO4GH
+
+this is just a wrapper of [STLdotNET](https://github.com/QuantumConcepts/STLdotNET.git) to make it available in grasshopper.
+
+This library provides two component, one is for inputting a stl file, another is for saving.
+
+After installation, the components can be found in Grasshopper by their names `STLinput`  and `STLoutput`。
+
+
+
+### Installation
+
+  build the project and copy the compiled `STLio.gha` file to your Grasshopper's component directory,  for more  tools and installation instructions, please refer to https://www.food4rhino.com/en.
