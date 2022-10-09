@@ -121,4 +121,10 @@
   <data name="stlIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stlIcon1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="STL_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STL_IN.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="STL_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STL_OUT.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

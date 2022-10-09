@@ -63,6 +63,26 @@ namespace STLio.Properties {
         /// <summary>
         ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Icon STL_IN {
+            get {
+                object obj = ResourceManager.GetObject("STL_IN", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Icon STL_OUT {
+            get {
+                object obj = ResourceManager.GetObject("STL_OUT", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Icon stlIcon1 {
             get {
                 object obj = ResourceManager.GetObject("stlIcon1", resourceCulture);
